@@ -34,6 +34,8 @@ class MovieRegistrationController extends Controller
             ], 400);
         }
 
+
+
         $registration = MovieRegistration::create($request->all());
         return response()->json([
             'message' => 'Registration successful',

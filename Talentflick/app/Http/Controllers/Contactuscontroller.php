@@ -41,13 +41,20 @@ class Contactuscontroller extends Controller
                 'message' => $request->message
             ];
 
-            Mail::to('tamizhchemmal@gmail.com')->send(new ContactMail($data));
+            if ($message) {
+                Mail::to('talentwoodinfo@gmail.com')->send(new ContactMail($data));
 
-            return response()->json([
-                'status' => 200,
-                'message' => "Thanks for Contacting Us.. we will reach you soon..",
-                'data' => $message
-            ]);
+                return response()->json([
+                    'status' => 200,
+                    'message' => "Thanks for Contacting Us.. we will reach you soon..",
+                    'data' => $message
+                ]);
+            } else {
+                return response()->json([
+                    'status' => 500,
+                    'message' => "Internal error try again later"
+                ]);
+            }
         }
 
 

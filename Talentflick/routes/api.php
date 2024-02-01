@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Contactuscontroller;
+use App\Http\Controllers\InterestedController;
 use App\Http\Controllers\MovieRegistrationController;
 use App\Http\Controllers\UserController;
 use App\Models\MovieRegistration;
@@ -28,3 +29,6 @@ Route::post('/contactus', [Contactuscontroller::class, 'contactus']);
 Route::get('/contactus', [Contactuscontroller::class, 'contactusview']);
 
 Route::post('/movie-registration', [MovieRegistrationController::class, 'movieRegistration']);
+
+
+Route::post('/interested', [InterestedController::class, 'interested']);
